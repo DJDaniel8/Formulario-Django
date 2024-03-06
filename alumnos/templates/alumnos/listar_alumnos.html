@@ -9,6 +9,7 @@
 </head>
 <body>
     <a href="{% url 'agregar_alumno' %}" class="btn-agregar">Registrar Nuevo Alumno</a>
+    <a href="{% url 'cantidad_alumnos_por_edad' %}" class="btn-agregar">Estadistica Alumnos * Edad</a>
     <h1>Listado de Alumnos</h1>
     <table>
         <thead>
@@ -28,7 +29,7 @@
                 <td>{{ alumno.nombre }}</td>
                 <td>{{ alumno.apellidos }}</td>
                 <td>{{ alumno.correoElectronico }}</td>
-                <td>{{ alumno.fechaNacimiento }}</td>
+                <td>{{ alumno.fechaNacimiento|date:"d/m/Y" }}</td>
                 <td>
                     <!-- Botón de editar con forma de lápiz -->
                     <a href="{% url 'editar_alumno' alumno.carnet %}">

@@ -24,5 +24,5 @@ urlpatterns = [
     path('listar/', views.listar_alumnos, name='listar_alumnos'),
     path('editar/<str:alumno_carnet>/', views.editar_alumno, name='editar_alumno'),
     path('eliminar/<str:carnet>/', views.eliminar_alumno, name='eliminar_alumno'),
-
+    path('cantidad-alumnos-por-edad/', views.cantidad_alumnos_por_edad, name='cantidad_alumnos_por_edad'),
 ]

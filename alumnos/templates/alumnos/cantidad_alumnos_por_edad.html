@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cantidad de Alumnos por Edad</title>
+    <link rel="stylesheet" href="{% static 'alumnos/estiloEstadistica.css' %}">
+</head>
+<body>
+    <a href="{% url 'listar_alumnos' %}" class="btn-agregar">Listar Alumnos</a>
+    <h1>Cantidad de Alumnos por Edad</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Edad</th>
+                <th>Cantidad de Alumnos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for edad, cantidad_alumnos in edades.items %}
+            <tr>
+                <td>{{ edad }}</td>
+                <td>{{ cantidad_alumnos }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
